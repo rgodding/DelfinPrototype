@@ -1,17 +1,39 @@
 package entity;
 
-public class Record {
-    private Member member;
-    private String time;
-    private String date;
-    private int placement;
-    private Discipline discipline;
+import java.time.LocalDate;
 
-    public Record(Member member, String time, String date, String placement, Discipline discipline){
-        this.member = member;
+public class Record {
+    private int id;
+    private Member holder;
+    private String time;
+    private LocalDate date;
+    private int placement;
+    private String discipline;
+
+    public Record(Member holder, String time, LocalDate date, int placement, String discipline){
+        this.holder = holder;
         this.time = time;
         this.date = date;
-        this.placement = Integer.parseInt(placement);
+        this.placement = placement;
         this.discipline = discipline;
+    }
+
+    public Member getHolder() {
+        return holder;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Record{" +
+                "holder=" + holder +
+                ", time='" + time + '\'' +
+                ", date=" + date +
+                ", placement=" + placement +
+                ", discipline='" + discipline + '\'' +
+                '}';
     }
 }

@@ -1,4 +1,8 @@
 package entity;
 
-public class Discipline {
+public enum Discipline {
+    Butterfly,
+    Crawl,
+    Rygcrawl,
+    Brystswømning
 }

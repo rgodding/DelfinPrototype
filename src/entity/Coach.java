@@ -9,4 +9,20 @@ public class Coach {
         this.id = id;
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getData(){
+        return id + "";
+    }
+
+    public String toString(){
+        return name + "(" + id + ")";
+    }
 }

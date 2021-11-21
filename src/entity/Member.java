@@ -12,13 +12,24 @@ public class Member {
     private double debt;
     private LocalDate startDate;
 
-    public Member(String name, LocalDate age, boolean active){
+    public Member(String name, LocalDate age, boolean active) {
+        idGenerator();
         this.name = name;
         this. age = age;
         this.active = active;
         startDate = LocalDate.now();
-        idGenerator();
     }
+
+    public Member(int id, String name, LocalDate age, boolean active, double debt, LocalDate startDate){
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.active = active;
+        this.debt = debt;
+        this.startDate = startDate;
+    }
+
+
 
     private void idGenerator(){
         Random random = new Random();
@@ -26,9 +37,8 @@ public class Member {
     }
 
     public String getData(){
-        return id + "_" + name + "_" + age + "_" + active + "_" + debt + "_" + startDate.toString();
+        return id + "_" + name + "_" + age + "_" + active + "_" + debt + "_" + startDate;
     }
-
     public String toString(){
         return "ID: " + id +
                 "\nName: " + name +
