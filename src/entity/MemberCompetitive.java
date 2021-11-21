@@ -9,9 +9,12 @@ public class MemberCompetitive extends Member {
     private ArrayList<Discipline> disciplines;
 
     public MemberCompetitive(String name, LocalDate age, boolean active, Coach coach, ArrayList<Discipline> disciplines) {
-        super(name, age, active);
+        super(true, name, age, active);
         this.disciplines = disciplines;
         this.coach = coach;
+    }
+    public MemberCompetitive(boolean isComp, int id, String name, LocalDate age, boolean active, double debt, LocalDate startDate, Coach coach, ArrayList<Discipline> disciplines) {
+        super(isComp, id, name, age, active, debt, startDate);
     }
 
 
@@ -49,14 +52,14 @@ public class MemberCompetitive extends Member {
         return crawl + "_" + rygCrawl + "_" + butterfly + "_" + brystswømning;
     }
 
+
+
     @Override
     public String getData() {
         return super.getData() + "_" + coach.getData() + "_" + disciplinesGetData();
     }
-
     public String toString(){
         return super.toString() + "\nCompetitive Swimmer - Coach: " + coach +
                 "\nDisciplines:\n" + toStringDisciplines();
     }
-
 }

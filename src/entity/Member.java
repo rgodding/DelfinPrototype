@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class Member {
 
+    private boolean isComp = false;
     private int id;
     private String name;
     private LocalDate age;
@@ -19,8 +20,19 @@ public class Member {
         this.active = active;
         startDate = LocalDate.now();
     }
-
-    public Member(int id, String name, LocalDate age, boolean active, double debt, LocalDate startDate){
+    //Super for Competitive
+    public Member(boolean isComp, String name, LocalDate age, boolean active) {
+        idGenerator();
+        this.isComp = isComp;
+        this.id = id;
+        this.name = name;
+        this. age = age;
+        this.active = active;
+        startDate = LocalDate.now();
+    }
+    //Already Exists
+    public Member(boolean isComp, int id, String name, LocalDate age, boolean active, double debt, LocalDate startDate){
+        this.isComp = isComp;
         this.id = id;
         this.name = name;
         this.age = age;
@@ -35,9 +47,8 @@ public class Member {
         Random random = new Random();
         id = random.nextInt(9999);
     }
-
     public String getData(){
-        return id + "_" + name + "_" + age + "_" + active + "_" + debt + "_" + startDate;
+        return isComp + "_" + id + "_" + name + "_" + age + "_" + active + "_" + debt + "_" + startDate;
     }
     public String toString(){
         return "ID: " + id +

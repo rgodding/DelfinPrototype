@@ -11,6 +11,10 @@ import java.util.Scanner;
 
 public class FileHandler {
 
+    //norm_8580_Jack_1999-07-29_true_0.0_2021-11-21_2_true_false_true_false
+    //STATUS_ID_NAME_BIRTHDATE_ACTIVE_DEBT_CREATIONDATE_CRAWL_RYGCRAWL_BUTTERFLY_BRYSTSWØMNING
+    //int id, String name, LocalDate age, boolean active, double debt, LocalDate startDate, | COMP | + Coach coach, ArrayList<Discipline> disciplines
+
     public void addMember(String data){
         File file = new File("data/members.txt");
         try {
